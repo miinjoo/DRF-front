@@ -24,8 +24,37 @@ const TitleInput = styled.div`
 	font-size: 24px;
 	line-height: 32px;
 	color: #e0d5cd;
-	padding: 14px;
 	box-sizing: border-box;
+	.Titleinputform {
+		color: orange;
+		margin-left: 5px;
+		margin-bottom: 3px;
+	}
+	.upload {
+		background: url('./image/inputbackground.png');
+		width: 646px;
+		height: 450px;
+		margin-left: 0;
+		margin-top: 8px;
+	}
+	.uploadbtn {
+		background: url('./image/uploadbtn.png') no-repeat;
+		width: 100px;
+		height: 100px;
+		border: none;
+		margin-top: 5%;
+		margin-left: 42%;
+		cursor: pointer;
+	}
+	.picturebtn {
+		width: 150px;
+		height: 130px;
+		border: none;
+		background: url('./image/inputimageupload.png') no-repeat;
+		margin-top: 27%;
+		margin-left: 37%;
+		cursor: pointer;
+	}
 `;
 const CommentAdd = styled.div`
 	margin-left: 30px;
@@ -82,7 +111,7 @@ const CommentItemBlock = styled.div`
 		margin-top: 5px;
 	}
 `;
-const Text = styled.div`
+const CommentText = styled.div`
 	font-size: 14px;
 	border: 1px solid #e5e7eb;
 	margin-left: 10px;
@@ -204,7 +233,6 @@ function App() {
 		<>
 			<GlobalStyle />
 			<HeaderTemplate></HeaderTemplate>
-
 			<MenuBarTemplate></MenuBarTemplate>
 			<MainTemplateLeft></MainTemplateLeft>
 			<FrameTemplate></FrameTemplate>
@@ -212,13 +240,27 @@ function App() {
 				<TitleInput>
 					<form onSubmit={PostSubmit}>
 						<input
+							className="Titleinputform"
 							placeholder="새 게시글 작성하기 "
 							value={newPost}
 							onChange={(e) => setNewPost(e.target.value)}
 						/>
 						<button>작성</button>
 					</form>
+					<div className="upload">
+						<button className="picturebtn"></button>
+						<button className="uploadbtn"></button>
+					</div>
+					{posts.map((post) => {
+						return (
+							<p style={{ border: '1px solid red' }}>
+								{post.content}
+								<button onClick={() => onDelete(post.id)}>삭제</button>
+							</p>
+						);
+					})}
 				</TitleInput>
+
 				<CommentTemplate>
 					<CommentHeader />
 					<CommentAdd>
@@ -236,9 +278,9 @@ function App() {
 						return (
 							<CommentItemBlock>
 								<img className="profile" src="./image/profile.svg"></img>
-								<Text>
+								<CommentText>
 									<p>{comment.content}</p>
-								</Text>
+								</CommentText>
 								<img className="repltbtn" src="./image/답글버튼.png"></img>
 							</CommentItemBlock>
 						);
