@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { createGlobalStyle } from 'styled-components';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import CommentHeader from './components/CommentHeader';
-import MainTemplate from './components/MainTemplate';
 import CommentTemplate from './components/CommentTemplate';
-
+import MainTemplateLeft from './components/MainTemplateLeft';
+import MainTemplateRight from './components/MainTemplateRight';
+import FrameTemplate from './components/FrameTemplate';
+import ImageTemplate from './components/ImageTemplate';
+import MenuBarTemplate from './components/MenuBarTemplate';
+import HeaderTemplate from './components/HeaderTemplate';
 const GlobalStyle = createGlobalStyle`
 body{
   background: 
@@ -16,9 +19,8 @@ const CommentAdd = styled.div`
 	margin-left: 30px;
 	margin-right: 30px;
 	align-items: center;
-	border: 1px solid;
-	margin-bottom: 20px;
-	border-bottom: 1px solid;
+	border: 1px solid black;
+	margin-bottom: 35px;
 	.profile {
 		width: 30px;
 		height: 30px;
@@ -54,9 +56,9 @@ const CommentItemBlock = styled.div`
 	margin-left: 30px;
 	margin-right: 30px;
 	align-items: center;
-	border-top: 1px solid;
-	margin-bottom: 20px;
-	border-bottom: 1px solid;
+	border-top: 1px solid black;
+	margin-bottom: 22px;
+	border-bottom: 1px solid black;
 	.profile {
 		width: 30px;
 		height: 30px;
@@ -75,6 +77,7 @@ const Text = styled.div`
 	margin-right: 10px;
 	margin-bottom: 5px;
 	margin-top: 5px;
+	color: black;
 `;
 
 function App() {
@@ -188,7 +191,13 @@ function App() {
 	return (
 		<>
 			<GlobalStyle />
-			<MainTemplate>
+			<HeaderTemplate></HeaderTemplate>
+
+			<MenuBarTemplate></MenuBarTemplate>
+
+			<MainTemplateLeft></MainTemplateLeft>
+			<FrameTemplate></FrameTemplate>
+			<ImageTemplate>
 				<CommentTemplate>
 					<CommentHeader />
 					<CommentAdd>
@@ -214,7 +223,9 @@ function App() {
 						);
 					})}
 				</CommentTemplate>
-			</MainTemplate>
+			</ImageTemplate>
+			<FrameTemplate></FrameTemplate>
+			<MainTemplateRight></MainTemplateRight>
 		</>
 	);
 }

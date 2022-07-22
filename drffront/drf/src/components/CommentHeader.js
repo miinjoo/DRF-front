@@ -7,11 +7,15 @@ const CommentHeaderBlock = styled.div`
 	display: flex;
 	figure {
 		text-align: center;
-		margin-right: 19px;
+		margin-right: 9px;
+		font-size: 17px;
 	}
 	img {
-		width: 33.33px;
-		height: 33.33px;
+		width: 33px;
+		height: 33px;
+	}
+	.select {
+		color: black;
 	}
 `;
 
@@ -24,7 +28,7 @@ function CommentHeader() {
 			</figure>
 			<figure>
 				<img className="commentbtn" src="./image/comment.svg"></img>
-				<figcaption>COMMENT</figcaption>
+				<figcaption className="select">COMMENT</figcaption>
 			</figure>
 			<figure>
 				<img className="spotbtn" src="./image/spot.svg"></img>
