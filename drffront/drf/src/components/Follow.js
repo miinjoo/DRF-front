@@ -7,7 +7,7 @@ const TextAll = styled.div`
 	font-weight: 700;
 	color: #fff;
 	display: inline-block;
-	text-aling: row;
+	text-align: row;
 	padding-right: 40px;
 `;
 

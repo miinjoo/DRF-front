@@ -15,6 +15,18 @@ body{
   #F5F5F5;
 }
 `;
+const TitleInput = styled.div`
+	width: 670px;
+	height: 60px;
+	background-color: #000;
+	float: left;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 32px;
+	color: #e0d5cd;
+	padding: 14px;
+	box-sizing: border-box;
+`;
 const CommentAdd = styled.div`
 	margin-left: 30px;
 	margin-right: 30px;
@@ -194,10 +206,19 @@ function App() {
 			<HeaderTemplate></HeaderTemplate>
 
 			<MenuBarTemplate></MenuBarTemplate>
-
 			<MainTemplateLeft></MainTemplateLeft>
 			<FrameTemplate></FrameTemplate>
 			<ImageTemplate>
+				<TitleInput>
+					<form onSubmit={PostSubmit}>
+						<input
+							placeholder="새 게시글 작성하기 "
+							value={newPost}
+							onChange={(e) => setNewPost(e.target.value)}
+						/>
+						<button>작성</button>
+					</form>
+				</TitleInput>
 				<CommentTemplate>
 					<CommentHeader />
 					<CommentAdd>
