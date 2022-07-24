@@ -9,12 +9,15 @@ import FrameTemplate from './components/FrameTemplate';
 import ImageTemplate from './components/ImageTemplate';
 import MenuBarTemplate from './components/MenuBarTemplate';
 import HeaderTemplate from './components/HeaderTemplate';
+import Uploader from './components/Uploader';
+
 const GlobalStyle = createGlobalStyle`
 body{
   background: 
   #F5F5F5;
 }
 `;
+
 const TitleInput = styled.div`
 	width: 670px;
 	height: 60px;
@@ -232,10 +235,10 @@ function App() {
 	return (
 		<>
 			<GlobalStyle />
-			<HeaderTemplate></HeaderTemplate>
-			<MenuBarTemplate></MenuBarTemplate>
-			<MainTemplateLeft></MainTemplateLeft>
-			<FrameTemplate></FrameTemplate>
+			<HeaderTemplate />
+			<MenuBarTemplate />
+			<MainTemplateLeft />
+			<FrameTemplate />
 			<ImageTemplate>
 				<TitleInput>
 					<form onSubmit={PostSubmit}>
@@ -247,10 +250,7 @@ function App() {
 						/>
 						<button>작성</button>
 					</form>
-					<div className="upload">
-						<button className="picturebtn"></button>
-						<button className="uploadbtn"></button>
-					</div>
+					<Uploader />
 					{posts.map((post) => {
 						return (
 							<p style={{ border: '1px solid red' }}>
