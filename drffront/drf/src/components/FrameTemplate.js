@@ -12,8 +12,8 @@ const WhiteBox = styled.div`
 	width: 50px;
 	height: 50px;
 	background-color: #fff;
-	margin-left: 35px;
-	margin-right: 35px;
+	margin-left: 30px;
+	margin-right: 30px;
 	margin-top: 40px;
 `;
 

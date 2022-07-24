@@ -19,6 +19,7 @@ function Profile({ children }) {
 					fontWeight: '700',
 					color: '#fff',
 					textAlign: 'center',
+					fontFamily: "'PT Serif', serif",
 				}}
 			>
 				PROFILE

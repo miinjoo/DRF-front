@@ -12,13 +12,13 @@ const MainTemplateBlock = styled.div`
 `;
 
 const Square = styled.div`
-	position: absolute;
 	width: 240px;
 	height: 550px;
 	float: left;
 	margin-top: 80px;
 	margin-left: 26px;
 	margin-right: 26px;
+	position: fixed;
 `;
 
 function MainTemplateLeft({ children }) {
@@ -27,7 +27,7 @@ function MainTemplateLeft({ children }) {
 			{' '}
 			<MainTemplateBlock
 				style={{
-					backgroundImage: `url(${image})`,
+					background: '#A7998D',
 					backgroundSize: 'cover',
 					opacity: '0.8',
 				}}

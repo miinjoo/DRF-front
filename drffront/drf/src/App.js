@@ -12,8 +12,7 @@ import HeaderTemplate from './components/HeaderTemplate';
 import Footer from './components/Footer';
 const GlobalStyle = createGlobalStyle`
 body{
-  background: 
-  #F5F5F5;
+	background: #A7998D;
 }
 `;
 const TitleInput = styled.div`
@@ -230,65 +229,71 @@ function App() {
 			});
 	};
 
+	const Main = styled.div`
+		margin-left: 292px;
+	`;
+
 	return (
 		<>
 			<GlobalStyle />
 			<HeaderTemplate></HeaderTemplate>
 			<MenuBarTemplate></MenuBarTemplate>
-			<MainTemplateLeft></MainTemplateLeft>
-			<FrameTemplate></FrameTemplate>
-			<ImageTemplate>
-				<TitleInput>
-					<form onSubmit={PostSubmit}>
-						<input
-							className="Titleinputform"
-							placeholder="새 게시글 작성하기 "
-							value={newPost}
-							onChange={(e) => setNewPost(e.target.value)}
-						/>
-						<button>작성</button>
-					</form>
-					<div className="upload">
-						<button className="picturebtn"></button>
-						<button className="uploadbtn"></button>
-					</div>
-					{posts.map((post) => {
-						return (
-							<p style={{ border: '1px solid red' }}>
-								{post.content}
-								<button onClick={() => onDelete(post.id)}>삭제</button>
-							</p>
-						);
-					})}
-				</TitleInput>
-
-				<CommentTemplate>
-					<CommentHeader />
-					<CommentAdd>
-						<img className="profile" src="./image/profile.svg"></img>
-						<form onSubmit={CommentSubmit}>
+			<MainTemplateLeft></MainTemplateLeft>	
+			<Main>
+				<FrameTemplate></FrameTemplate>
+				<ImageTemplate>
+					<TitleInput>
+						<form onSubmit={PostSubmit}>
 							<input
-								placeholder="댓글 작성하기"
-								value={newComment}
-								onChange={(e) => setNewComment(e.target.value)}
+								className="Titleinputform"
+								placeholder="새 게시글 작성하기 "
+								value={newPost}
+								onChange={(e) => setNewPost(e.target.value)}
 							/>
-							<button></button>
+							<button>작성</button>
 						</form>
-					</CommentAdd>
-					{comments.map((comment) => {
-						return (
-							<CommentItemBlock>
-								<img className="profile" src="./image/profile.svg"></img>
-								<CommentText>
-									<p>{comment.content}</p>
-								</CommentText>
-								<img className="repltbtn" src="./image/답글버튼.png"></img>
-							</CommentItemBlock>
-						);
-					})}
-				</CommentTemplate>
-			</ImageTemplate>
-			<FrameTemplate></FrameTemplate>
+						<div className="upload">
+							<button className="picturebtn"></button>
+							<button className="uploadbtn"></button>
+						</div>
+						{posts.map((post) => {
+							return (
+								<p style={{ border: '1px solid red' }}>
+									{post.content}
+									<button onClick={() => onDelete(post.id)}>삭제</button>
+								</p>
+							);
+						})}
+					</TitleInput>
+
+					<CommentTemplate>
+						<CommentHeader />
+						<CommentAdd>
+							<img className="profile" src="./image/profile.svg"></img>
+							<form onSubmit={CommentSubmit}>
+								<input
+									placeholder="댓글 작성하기"
+									value={newComment}
+									onChange={(e) => setNewComment(e.target.value)}
+								/>
+								<button></button>
+							</form>
+						</CommentAdd>
+						{comments.map((comment) => {
+							return (
+								<CommentItemBlock>
+									<img className="profile" src="./image/profile.svg"></img>
+									<CommentText>
+										<p>{comment.content}</p>
+									</CommentText>
+									<img className="repltbtn" src="./image/답글버튼.png"></img>
+								</CommentItemBlock>
+							);
+						})}
+					</CommentTemplate>
+				</ImageTemplate>
+				<FrameTemplate></FrameTemplate>
+			</Main>
 			<MainTemplateRight></MainTemplateRight>
 			<Footer></Footer>
 		</>
