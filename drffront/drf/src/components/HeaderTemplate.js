@@ -48,7 +48,7 @@ function HeaderTemplate({ children }) {
 						fontFamily: "'PT Serif', serif",
 					}}
 				>
-					THE FLIM
+					THE FILM
 				</p>
 				<p
 					style={{
@@ -59,7 +59,7 @@ function HeaderTemplate({ children }) {
 						fontFamily: "'Open Sans', sans-serif",
 					}}
 				>
-					of your lilfe
+					of your life
 				</p>
 			</BackgroundImage>
 		</>
