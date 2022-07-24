@@ -9,6 +9,7 @@ import FrameTemplate from './components/FrameTemplate';
 import ImageTemplate from './components/ImageTemplate';
 import MenuBarTemplate from './components/MenuBarTemplate';
 import HeaderTemplate from './components/HeaderTemplate';
+import Footer from './components/Footer';
 const GlobalStyle = createGlobalStyle`
 body{
   background: 
@@ -289,6 +290,7 @@ function App() {
 			</ImageTemplate>
 			<FrameTemplate></FrameTemplate>
 			<MainTemplateRight></MainTemplateRight>
+			<Footer></Footer>
 		</>
 	);
 }
