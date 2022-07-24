@@ -82,9 +82,7 @@ const Uploader = () => {
 						type="primary"
 						variant="contained"
 						onClick={() => inputRef.click()}
-					>
-						Preview
-					</button>
+					></button>
 					<button color="error" variant="contained" onClick={deleteImage}>
 						Delete
 					</button>
