@@ -1,3 +1,4 @@
+import { faBold } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import styled from 'styled-components';
 import image from './flim.png';
@@ -44,6 +45,7 @@ function HeaderTemplate({ children }) {
 						fontWeight: '700',
 						margin: '0px',
 						paddingTop: '30px',
+						fontFamily: "'PT Serif', serif",
 					}}
 				>
 					THE FLIM
@@ -54,6 +56,7 @@ function HeaderTemplate({ children }) {
 						fontSize: '20px',
 						fontWeight: '700',
 						marginTop: '14px',
+						fontFamily: "'Open Sans', sans-serif",
 					}}
 				>
 					of your lilfe

@@ -3,16 +3,10 @@
     float: left;
 }
 
-.footer-etc{
-    margin: 50px;
-}
-
-.footer-us{
-    margin: 50px;
-}
-
-.footer-blog{
-    margin: 50px;
+.footer-etc, .footer-us, .footer-blog{
+    margin-bottom: 50px;
+    margin-left: 80px;
+    margin-right: 80px;
 }
 
 .footer-head{
@@ -45,8 +39,8 @@
 .website-rights{
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    margin-bottom: 16px;
     color: white;
+    margin-bottom: 16px;
 }
 
 .footer-etctext{

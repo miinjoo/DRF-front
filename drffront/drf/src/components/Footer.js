@@ -6,10 +6,10 @@ const FooterBlock = styled.div`
     height: 360px;
     width: 1440px;
     display: flex;
-    
-    justify-content: center;
-    align-items: center;
     background-color: black;
+    flex-direction : column;
+    justify-content: flex-end;
+    align-items: center;
 `;
 
 function Footer() {
@@ -29,7 +29,12 @@ function Footer() {
                     <p className='footer-ustext'>10f abc buliding</p>
                     <p className='footer-ustext'>gangnam, seoul, korea</p>
                     <p className='footer-ustext'>81-2-1234-0000</p>
-                    <p className='footer-ustext'>info@abc.com</p>
+                    <p style={{
+						fontFamily: "'Istok Web', sans-serif",
+                        fontStyle: 'italic',
+                        color: 'white',
+                        fontSize: '14px',
+					}}>info@abc.com</p>
                 </div>
 
                 <div className='footer-blog'>
@@ -41,11 +46,11 @@ function Footer() {
                     <p className='footer-blogtext'>Lorem Ipsum Dolor Sit</p>
                     <p className='footer-blogsubtext'>On April 2020</p>
                 </div>
-
+                </div>  
                 <small className='website-rights'>Copyright by DRF TEAM2 All right reserved</small>
-            </div>
         </FooterBlock>
     )
 }
+
 
 export default Footer

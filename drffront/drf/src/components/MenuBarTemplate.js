@@ -22,6 +22,7 @@ const ButtonB = styled.button`
 	line-height: 32px;
 	color: #fff;
 	display: inline-block;
+	font-family: 'PT Serif', serif;
 `;
 
 function MenuBarTemplate({ children }) {
