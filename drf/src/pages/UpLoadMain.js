@@ -9,9 +9,11 @@ import MenuBarTemplate from './components/MenuBarTemplate';
 import HeaderTemplateLogOut from './components/HeaderTemplateLogOut';
 import Footer from './components/Footer';
 import { useNavigate } from 'react-router-dom';
+import './scroll.css';
+
 const GlobalStyle = createGlobalStyle`
 body{
-	background: #A7998D;
+	background: #F5F5F5;
 }
 `;
 const TitleInput = styled.div`
@@ -55,6 +57,16 @@ const TitleInput = styled.div`
 		margin-top: 27%;
 		margin-left: 37%;
 		cursor: pointer;
+	}
+	
+	.trashbtn{
+		width : 28px;
+		height : 33px;
+		background: url('./image/trash.png') ;
+		background-size : cover;
+		float : right;
+		margin-top: 3px;
+		margin-right : 45px;
 	}
 `;
 
@@ -197,7 +209,7 @@ function UpLoadMain() {
 							onClick={() => inputRef.click()}
 						></button>
 						<button className="uploadbtn" onClick={sendImageToServer}></button>
-					</div>
+					</div><div className='scroll'>
 					{posts.map((post) => {
 						return (
 							<div>
@@ -206,7 +218,7 @@ function UpLoadMain() {
 									style={{ background: 'black', height: '42px' }}
 								>
 									{post.title}
-									<button onClick={() => onDelete(post.id)}>삭제</button>
+									<button className="trashbtn" onClick={() => onDelete(post.id)}></button>
 								</p>
 								<img
 									style={{ width: '646px', height: '450px' }}
@@ -215,6 +227,7 @@ function UpLoadMain() {
 							</div>
 						);
 					})}
+					</div>
 				</TitleInput>
 			</ImageTemplate>
 			<FrameTemplate></FrameTemplate>

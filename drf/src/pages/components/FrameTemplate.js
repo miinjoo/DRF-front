@@ -2,11 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Full = styled.div`
-	width: 25px;
+	width: 105px;
 	height: 2200px;
 	background-color: #000;
 	float: left;
-	justify-contents: center;
 `;
 
 const WhiteBox = styled.div`
@@ -22,7 +21,30 @@ function FrameTemplate({ children }) {
 	return (
 		<>
 			<Full>
-				
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
+				<WhiteBox>{children}</WhiteBox>
 			</Full>
 		</>
 	);

@@ -15,11 +15,11 @@ const Square = styled.div`
 	
 	width: 240px;
 	height: 550px;
-	float: left;
+
 	margin-top: 80px;
-	margin-left: 66px;
+	margin-left: 30px;
 	margin-right: 26px;
-	position: fixed;
+
 `;
 
 function MainTemplateRight({ children }) {
@@ -28,7 +28,7 @@ function MainTemplateRight({ children }) {
 			{' '}
 			<MainTemplateBlock
 				style={{
-					background: '#A7998D',
+					background: `url(${image})`,
 					backgroundSize: 'cover',
 					opacity: '0.8',
 				}}
