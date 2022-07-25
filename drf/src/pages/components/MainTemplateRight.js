@@ -17,7 +17,7 @@ const Square = styled.div`
 	height: 550px;
 	float: left;
 	margin-top: 80px;
-	margin-left: 26px;
+	margin-left: 66px;
 	margin-right: 26px;
 	position: fixed;
 `;

@@ -16,7 +16,7 @@ body{
 `;
 const TitleInput = styled.div`
 	width: 670px;
-	height: 60px;
+	height: 2200px;
 	background-color: #000;
 	float: left;
 	font-weight: 700;

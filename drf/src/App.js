@@ -11,8 +11,10 @@ body{
 }
 `;
 
+
 const App = () => {
 	return (
+		
 		<Routes>
 			<Route path="/" element={<LoginUs />}></Route>
 			<Route path="/mypage" element={<UpLoadMain />} />
