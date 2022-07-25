@@ -11,8 +11,7 @@ import Footer from './components/Footer';
 import { useNavigate } from 'react-router-dom';
 const GlobalStyle = createGlobalStyle`
 body{
-	background: 
-	#F5F5F5;
+	background: #A7998D;
 }
 `;
 const TitleInput = styled.div`

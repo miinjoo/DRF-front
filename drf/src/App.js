@@ -7,8 +7,7 @@ import CommentPage from './pages/CommentPage';
 
 const GlobalStyle = createGlobalStyle`
 body{
-	background: 
-	#F5F5F5;
+	background: #A7998D;
 }
 `;
 
