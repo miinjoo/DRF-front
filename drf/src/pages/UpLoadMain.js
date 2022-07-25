@@ -56,67 +56,10 @@ const TitleInput = styled.div`
 		cursor: pointer;
 	}
 `;
-const CommentAdd = styled.div`
-	margin-left: 30px;
-	margin-right: 30px;
-	align-items: center;
-	border: 1px solid black;
-	margin-bottom: 35px;
-	.profile {
-		width: 30px;
-		height: 30px;
-		margin-left: 10px;
-		margin-top: 5px;
-	}
-	input {
-		margin-bottom: 8px;
-	}
-	button {
-		background: url('./image/등록버튼.png') no-repeat;
-		border: none;
-		cursor: pointer;
-		width: 100px;
-		height: 30px;
-		margin-right: 10px;
-		margin-left: 525px;
-	}
-	.repltbtn {
-		float: right;
-		margin-right: 12px;
-		margin-top: 7px;
-		margin-bottom: 7px;
-	}
-	input {
-		height: 90px;
-		width: 95%;
-		margin-left: 10px;
-		border: 1px solid #e5e7eb;
-	}
-`;
-const CommentItemBlock = styled.div`
-	margin-left: 30px;
-	margin-right: 30px;
-	align-items: center;
-	border-top: 1px solid black;
-	margin-bottom: 22px;
-	border-bottom: 1px solid black;
-	.profile {
-		width: 30px;
-		height: 30px;
-		margin-left: 10px;
-		margin-top: 5px;
-	}
-	.repltbtn {
-		margin-left: 10px;
-		margin-top: 5px;
-	}
-`;
 
 function UpLoadMain() {
 	// 받아온 데이터 저장하는 state
 	const [posts, setPosts] = useState([]);
-	const [singlePost, setSinglePost] = useState({});
-	const [comments, setComments] = useState([]);
 	// input에 입력된 게시글과 댓글
 	const [newPost, setNewPost] = useState('');
 
@@ -128,9 +71,9 @@ function UpLoadMain() {
 	// 전체 게시글 조회 함수
 	const getPosts = async () => {
 		const response = await axios
-			.get('https://dy6578.pythonanywhere.com/api/posts/')
+			.get('http://zimnii.pythonanywhere.com/posts')
 			.then((response) => {
-				// ?? (전체 게시글 저장)
+				// (전체 게시글 저장)
 				setPosts(response.data);
 			})
 			.catch((error) => {
@@ -142,22 +85,22 @@ function UpLoadMain() {
 	const PostSubmit = (e) => {
 		e.preventDefault();
 
-		// 아래 코드 중 .post("??", {})에서 { }도 채워주세요 !!
 		axios
-			.post('https://dy6578.pythonanywhere.com/api/posts/', {
-				title: '제 목',
-				author: 1,
-				content: newPost,
+			.post('http://zimnii.pythonanywhere.com/posts', {
+				title: newPost,
+				photo:
+					'http://zimnii.pythonanywhere.com/media/post_photo/KakaoTalk_20210901_232318133_23.jpg',
+				user: '밍',
 			})
 			.then((response) => {
-				// ?? (게시글 불러오기)
+				//(게시글 불러오기)
 				getPosts();
 			})
 			.catch((error) => {
 				console.log('작성 실패');
 			});
 
-		// ???? (input 비우기)
+		//(input 비우기)
 		setNewPost('');
 	};
 
@@ -166,7 +109,7 @@ function UpLoadMain() {
 	// 게시글 삭제 함수
 	const onDelete = (id) => {
 		axios
-			.delete(`https://dy6578.pythonanywhere.com/api/posts/${id}`)
+			.delete(`http://zimnii.pythonanywhere.com/posts/${id}`)
 			.then((response) => {
 				// ???? (전체 게시글 불러오기)
 				getPosts(response.data);
@@ -254,13 +197,17 @@ function UpLoadMain() {
 					</div>
 					{posts.map((post) => {
 						return (
-							<p
-								onClick={() => goComment(post.id)}
-								style={{ border: '1px solid red' }}
-							>
-								{post.content}
-								<button onClick={() => onDelete(post.id)}>삭제</button>
-							</p>
+							<div>
+								<p
+									onClick={() => goComment(post.id)}
+									style={{ background: 'black', height: '42px' }}
+								>
+									{post.title}
+									<button onClick={() => onDelete(post.id)}>삭제</button>
+								</p>
+
+								<img>{post.photo}</img>
+							</div>
 						);
 					})}
 				</TitleInput>

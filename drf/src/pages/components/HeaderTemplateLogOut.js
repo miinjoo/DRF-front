@@ -49,6 +49,7 @@ function HeaderTemplateLogOut({ children }) {
 						fontWeight: '700',
 						margin: '0px',
 						paddingTop: '30px',
+						fontFamily: "'PT Serif', serif",
 					}}
 				>
 					THE FILM
@@ -59,6 +60,7 @@ function HeaderTemplateLogOut({ children }) {
 						fontSize: '20px',
 						fontWeight: '700',
 						marginTop: '14px',
+						fontFamily: "'Open Sans', sans-serif",
 					}}
 				>
 					of your life

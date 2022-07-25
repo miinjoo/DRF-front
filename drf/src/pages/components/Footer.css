@@ -1,56 +1,52 @@
-.footer-container{
-    display: flex;
-    float: left;
+.footer-container {
+	display: flex;
+	float: left;
 }
 
-.footer-etc{
-    margin: 50px;
+.footer-etc,
+.footer-us,
+.footer-blog {
+	margin-bottom: 50px;
+	margin-left: 80px;
+	margin-right: 80px;
 }
 
-.footer-us{
-    margin: 50px;
+.footer-head {
+	font-family: 'PT Serif', serif;
+	font-weight: 700;
+	font-size: 24px;
+	color: #facc15;
 }
 
-.footer-blog{
-    margin: 50px;
+.footer-blogtext {
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	color: white;
 }
 
-.footer-head{
-    font-family: 'PT Serif', serif;
-    font-weight: 700;
-    font-size: 24px;
-    color: #FACC15;
+.footer-blogsubtext {
+	font-family: 'Josefin Sans', sans-serif;
+	font-style: italic;
+	font-size: 12px;
+	color: white;
 }
 
-.footer-blogtext{
-    font-size: 14px;
-    font-family: 'Open Sans', sans-serif;
-    color: white;
+.footer-ustext {
+	font-size: 14px;
+	font-family: 'PT Serif', serif;
+	font-weight: 400;
+	color: white;
 }
 
-.footer-blogsubtext{
-    font-family: 'Josefin Sans', sans-serif;
-    font-style: italic;
-    font-size: 12px;
-    color: white;
+.website-rights {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	color: white;
+	margin-bottom: 16px;
 }
 
-.footer-ustext{
-    font-size: 14px;
-    font-family: 'PT Serif', serif;
-    font-weight: 400;
-    color: white;
-}
-
-.website-rights{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    margin-bottom: 16px;
-    color: white;
-}
-
-.footer-etctext{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    color: white;
+.footer-etctext {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color: white;
 }
