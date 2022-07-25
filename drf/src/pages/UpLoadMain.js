@@ -105,8 +105,6 @@ function UpLoadMain() {
 		setNewPost('');
 	};
 
-	// 새로운 댓글 작성 함수
-
 	// 게시글 삭제 함수
 	const onDelete = (id) => {
 		axios
@@ -120,9 +118,13 @@ function UpLoadMain() {
 			});
 	};
 	const navigate = useNavigate();
-	const goComment = (id) => {
+	const goComment = (id, photo) => {
 		var postId = id;
-		navigate(`/comment/${postId}`, { state: { postId: postId } });
+		var postPhoto = photo;
+		console.log(photo);
+		navigate(`/comment/${postId}`, {
+			state: { postId: postId, postPhoto: postPhoto },
+		});
 	};
 	const [image, setImage] = useState({
 		image_file: '',
@@ -200,7 +202,7 @@ function UpLoadMain() {
 						return (
 							<div>
 								<p
-									onClick={() => goComment(post.id)}
+									onClick={() => goComment(post.id, post.photo)}
 									style={{ background: 'black', height: '42px' }}
 								>
 									{post.title}

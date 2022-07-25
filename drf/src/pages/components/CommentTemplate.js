@@ -5,7 +5,7 @@ const CommentTemplateBlock = styled.div`
 	width: 640px;
 	height: 100%;
 	background-color: #ffffff;
-	margin-top: 570px;
+	margin-top: 530px;
 	margin-bottom: 0;
 	flex-direction: column;
 	display: flex;
