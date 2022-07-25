@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { Link, useNavigate } from 'react-router-dom';
 const Menu = styled.div`
 	width: 1440px;
 	height: 80px;
@@ -22,11 +22,6 @@ const ButtonB = styled.button`
 	line-height: 32px;
 	color: #fff;
 	display: inline-block;
-	font-family: 'PT Serif', serif;
-	cursor: pointer;
-	&:hover {
-		color: #facc15;
-	}
 `;
 
 function MenuBarTemplate({ children }) {
@@ -34,7 +29,7 @@ function MenuBarTemplate({ children }) {
 		<>
 			<Menu>
 				<Blank></Blank>
-				<ButtonB>HOME</ButtonB>
+				<ButtonB ><Link to="/mypage" style={{color:'#fff',textDecoration:'none'}}>HOME</Link></ButtonB>
 				<ButtonB>FILM</ButtonB>
 				<ButtonB>STUDIO</ButtonB>
 				<ButtonB>MARK</ButtonB>

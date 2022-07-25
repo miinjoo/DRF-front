@@ -1,7 +1,5 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
-import KakaoLog from './KakaoLog.png';
-import GoogleLog from './googlelog.png'
 import {  useNavigate } from 'react-router-dom';
 
 const LoginForm= ()=>  {
@@ -43,12 +41,7 @@ const LoginForm= ()=>  {
                     LOGIN</button>
             </form>
 
-            <img 
-            style ={{marginTop:'18px'}}
-            src={KakaoLog}></img>
-            <img 
-            style ={{marginTop:'18px', marginLeft:'30px',borderRadius:'10px',width:'37px'}}
-            src={GoogleLog}></img>
+
         </>
     );
 };
