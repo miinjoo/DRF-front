@@ -121,39 +121,21 @@ const CommentPage = () => {
 	const [comments, setComments] = useState([]);
 
 	// input에 입력된 게시글과 댓글
-	const [newPost, setNewPost] = useState('');
 	const [newComment, setNewComment] = useState('');
 
 	// 상세 조회하고자 하는 게시글의 id
 
 	// 새로고침 될 때 마다 실행됩니다.
 	useEffect(() => {
-		getPosts();
 		getSinglePost();
 	}, []);
-
-	// 전체 게시글 조회 함수
-	const getPosts = async () => {
-		const response = await axios
-			.get('https://dy6578.pythonanywhere.com/api/posts/')
-			.then((response) => {
-				// (전체 게시글 저장)
-				setPosts(response.data);
-			})
-			.catch((error) => {
-				console.log('전체 글 불러오기 실패', error.message);
-			});
-	};
 
 	// 특정 게시글 조회
 	const getSinglePost = async () => {
 		const response = await axios
-			.get(`https://dy6578.pythonanywhere.com/api/posts/${id}`)
+			.get(`http://zimnii.pythonanywhere.com/posts/${id}/comments`)
 			.then((response) => {
-				//  (특정 게시글 저장)
-				setSinglePost(response.data);
-				// (댓글 저장)
-				setComments(response.data.comment);
+				setComments(response.data);
 			})
 			.catch((error) => {
 				console.log('글 하나 불러오기 실패');
@@ -166,22 +148,16 @@ const CommentPage = () => {
 
 		// 아래 코드 중 .post("????", { })에서 { }도 채워주세요 !!
 		axios
-			.post('https://dy6578.pythonanywhere.com/api/comments/', {
-				post: id,
-				author: 1,
-				content: newComment,
+			.post(`http://zimnii.pythonanywhere.com/posts/${id}/comments`, {
+				comment: newComment,
+				user: '밍',
 			})
 			.then((response) => {
-				// ?? (게시글 불러오기)
-				// ?? (특정 게시글 불러오기)
-				getPosts();
 				getSinglePost();
 			})
 			.catch(function (error) {
 				console.log('댓글 작성 실패', error);
 			});
-
-		// ??? (input 비우기)
 		setNewComment('');
 	};
 
@@ -219,7 +195,7 @@ const CommentPage = () => {
 							<CommentItemBlock>
 								<img className="profile" src={profile}></img>
 								<CommentText>
-									<p>{comment.content}</p>
+									<p>{comment.comment}</p>
 								</CommentText>
 								<img className="repltbtn" src={답글버튼}></img>
 							</CommentItemBlock>

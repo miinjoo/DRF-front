@@ -106,8 +106,6 @@ function UpLoadMain() {
 		setNewPost('');
 	};
 
-	// 새로운 댓글 작성 함수
-
 	// 게시글 삭제 함수
 	const onDelete = (id) => {
 		axios
