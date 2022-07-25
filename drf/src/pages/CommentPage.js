@@ -36,7 +36,7 @@ const TitleInput = styled.div`
 		margin-bottom: 20px;
 	}
 	.upload {
-		background: red;
+		background: black;
 		width: 646px;
 		height: 450px;
 		margin-left: 0;
@@ -47,6 +47,7 @@ const TitleInput = styled.div`
 		width: 646px;
 		height: 50px;
 		background: #000;
+		margin-top: 0px;
 	}
 `;
 const CommentAdd = styled.div`
@@ -115,6 +116,8 @@ const CommentPage = () => {
 	// 받아온 데이터 저장하는 state
 	const location = useLocation();
 	const id = location.state.postId;
+	const photo = location.state.postPhoto;
+	console.log(location.state);
 
 	const [posts, setPosts] = useState([]);
 	const [singlePost, setSinglePost] = useState({});
@@ -171,7 +174,10 @@ const CommentPage = () => {
 			<ImageTemplate>
 				<TitleInput>
 					<h1>{singlePost.content}</h1>
-					<div className="upload"></div>
+					<div style={{ background: 'black' }}>
+						<img src={photo} className="upload"></img>
+					</div>
+
 					<div className="back"></div>
 				</TitleInput>
 

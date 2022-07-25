@@ -5,7 +5,6 @@ import Vector from './Vector.svg';
 import studio from './studio.svg';
 import spot from './spot.svg';
 import print from './print.svg';
-import profile from './profile.svg';
 import comment from './comment.svg';
 
 const CommentHeaderBlock = styled.div`
