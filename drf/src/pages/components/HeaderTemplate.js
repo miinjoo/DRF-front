@@ -15,7 +15,6 @@ const HeaderTemplateBlock = styled.div`
 	color: #000;
 `;
 
-
 const BackgroundImage = styled.div`
 	width: 1440px;
 	height: 160px;
@@ -29,16 +28,23 @@ function HeaderTemplate({ children }) {
 		<>
 			<HeaderTemplateBlock>
 				<ul>
-					<li style={{ listStyle:'none', float:'left',marginLeft : "1150px"}}>MYPAGE</li>
-					<li style={{ listStyle:'none', float:'left',marginLeft : "40px"}}><Link to="/">LOGIN</Link></li>
-					<li style={{ listStyle:'none', float:'left',marginLeft : "40px"}}>JOIN</li>
+					<li
+						style={{ listStyle: 'none', float: 'left', marginLeft: '1150px' }}
+					>
+						MYPAGE
+					</li>
+					<li style={{ listStyle: 'none', float: 'left', marginLeft: '40px' }}>
+						<Link to="/">LOGIN</Link>
+					</li>
+					<li style={{ listStyle: 'none', float: 'left', marginLeft: '40px' }}>
+						JOIN
+					</li>
 				</ul>
-
 			</HeaderTemplateBlock>
 			<BackgroundImage style={{ backgroundImage: `url(${image})` }}>
 				<p
 					style={{
-						color: '#ff0',
+						color: '#FACC15',
 						fontSize: '42px',
 						fontWeight: '700',
 						margin: '0px',
@@ -55,7 +61,7 @@ function HeaderTemplate({ children }) {
 						marginTop: '14px',
 					}}
 				>
-					of your lilfe
+					of your life
 				</p>
 			</BackgroundImage>
 		</>

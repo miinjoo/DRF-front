@@ -12,6 +12,9 @@ import CommentHeader from './components/CommentHeader';
 import CommentTemplate from './components/CommentTemplate';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import profile from './components/profile.svg';
+import 등록버튼 from './components/등록버튼.png';
+import 답글버튼 from './components/답글버튼.png';
 const GlobalStyle = createGlobalStyle`
 body{
 	background: 
@@ -62,13 +65,10 @@ const CommentAdd = styled.div`
 		margin-bottom: 8px;
 	}
 	button {
-		background: url('./image/등록버튼.png') no-repeat;
 		border: none;
 		cursor: pointer;
-		width: 100px;
-		height: 30px;
 		margin-right: 10px;
-		margin-left: 525px;
+		margin-left: 515px;
 	}
 	.repltbtn {
 		float: right;
@@ -202,24 +202,26 @@ const CommentPage = () => {
 				<CommentTemplate>
 					<CommentHeader />
 					<CommentAdd>
-						<img className="profile" src="./image/profile.svg"></img>
+						<img className="profile" src={profile}></img>
 						<form onSubmit={CommentSubmit}>
 							<input
 								placeholder="댓글 작성하기"
 								value={newComment}
 								onChange={(e) => setNewComment(e.target.value)}
 							/>
-							<button></button>
+							<button>
+								<img src={등록버튼}></img>
+							</button>
 						</form>
 					</CommentAdd>
 					{comments.map((comment) => {
 						return (
 							<CommentItemBlock>
-								<img className="profile" src="./image/profile.svg"></img>
+								<img className="profile" src={profile}></img>
 								<CommentText>
 									<p>{comment.content}</p>
 								</CommentText>
-								<img className="repltbtn" src="./image/답글버튼.png"></img>
+								<img className="repltbtn" src={답글버튼}></img>
 							</CommentItemBlock>
 						);
 					})}

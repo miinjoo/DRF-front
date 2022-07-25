@@ -22,6 +22,10 @@ const ButtonB = styled.button`
 	line-height: 32px;
 	color: #fff;
 	display: inline-block;
+	cursor: pointer;
+	&:hover {
+		color: #facc15;
+	}
 `;
 
 function MenuBarTemplate({ children }) {
