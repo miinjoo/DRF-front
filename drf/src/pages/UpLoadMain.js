@@ -29,6 +29,8 @@ const TitleInput = styled.div`
 		color: orange;
 		margin-left: 5px;
 		margin-bottom: 3px;
+		width: 500px;
+		height: 15px;
 	}
 	.upload {
 		background: url('./image/inputbackground.png');
@@ -125,7 +127,7 @@ function UpLoadMain() {
 	};
 	const [image, setImage] = useState({
 		image_file: '',
-		preview_URL: 'img/default_image.png',
+		preview_URL: './image/inputbackground.png',
 	});
 
 	let inputRef;
@@ -153,7 +155,7 @@ function UpLoadMain() {
 			alert('서버에 등록이 완료되었습니다!');
 			setImage({
 				image_file: '',
-				preview_URL: 'img/default_image.png',
+				preview_URL: './image/inputbackground.png',
 			});
 		} else {
 			alert('사진을 등록하세요!');
@@ -205,8 +207,10 @@ function UpLoadMain() {
 									{post.title}
 									<button onClick={() => onDelete(post.id)}>삭제</button>
 								</p>
-
-								<img>{post.photo}</img>
+								<img
+									style={{ width: '646px', height: '450px' }}
+									src={post.photo}
+								></img>
 							</div>
 						);
 					})}
