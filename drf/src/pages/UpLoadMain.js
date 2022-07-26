@@ -13,7 +13,8 @@ import './scroll.css';
 
 const GlobalStyle = createGlobalStyle`
 body{
-	background: #F5F5F5;
+	background: 
+	#F5F5F5;
 }
 `;
 const TitleInput = styled.div`
@@ -70,16 +71,6 @@ const TitleInput = styled.div`
 		margin-top: 27%;
 		margin-left: 37%;
 		cursor: pointer;
-	}
-	
-	.trashbtn{
-		width : 28px;
-		height : 33px;
-		background: url('./image/trash.png') ;
-		background-size : cover;
-		float : right;
-		margin-top: 3px;
-		margin-right : 45px;
 	}
 `;
 
@@ -235,7 +226,7 @@ function UpLoadMain() {
 							onClick={() => inputRef.click()}
 						></button>
 						<button className="uploadbtn" onClick={sendImageToServer}></button>
-					</div><div className='scroll'>
+					</div>
 					{posts.map((post) => {
 						return (
 							<div style={{ background: 'black' }}>
@@ -249,14 +240,10 @@ function UpLoadMain() {
 									}}
 								>
 									{post.title}
-<<<<<<< HEAD
 									<button
 										className="trashbtn"
 										onClick={() => onDelete(post.id)}
 									></button>
-=======
-									<button className="trashbtn" onClick={() => onDelete(post.id)}></button>
->>>>>>> bccbfc4262b05a257c6f4210d6597bb81f80688b
 								</p>
 								<img
 									style={{ width: '646px', height: '450px' }}
@@ -265,7 +252,6 @@ function UpLoadMain() {
 							</div>
 						);
 					})}
-					</div>
 				</TitleInput>
 			</ImageTemplate>
 			<FrameTemplate></FrameTemplate>

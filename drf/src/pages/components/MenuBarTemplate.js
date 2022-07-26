@@ -22,12 +22,9 @@ const ButtonB = styled.button`
 	line-height: 32px;
 	color: #fff;
 	display: inline-block;
-<<<<<<< HEAD
 	&:hover {
 		color: #facc15;
 	}
-=======
->>>>>>> bccbfc4262b05a257c6f4210d6597bb81f80688b
 `;
 
 function MenuBarTemplate({ children }) {
@@ -35,15 +32,11 @@ function MenuBarTemplate({ children }) {
 		<>
 			<Menu>
 				<Blank></Blank>
-<<<<<<< HEAD
 				<ButtonB>
 					<Link to="/mypage" style={{ color: '#fff', textDecoration: 'none' }}>
 						HOME
 					</Link>
 				</ButtonB>
-=======
-				<ButtonB ><Link to="/mypage" style={{color:'#fff',textDecoration:'none'}}>HOME</Link></ButtonB>
->>>>>>> bccbfc4262b05a257c6f4210d6597bb81f80688b
 				<ButtonB>FILM</ButtonB>
 				<ButtonB>STUDIO</ButtonB>
 				<ButtonB>MARK</ButtonB>

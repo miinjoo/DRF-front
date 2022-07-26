@@ -150,8 +150,6 @@ const CommentPage = () => {
 	// 새로운 댓글 작성 함수
 	const CommentSubmit = (e) => {
 		e.preventDefault();
-
-		// 아래 코드 중 .post("????", { })에서 { }도 채워주세요 !!
 		axios
 			.post(`http://zimnii.pythonanywhere.com/posts/${id}/comments`, {
 				comment: newComment,
@@ -197,12 +195,12 @@ const CommentPage = () => {
 							</button>
 						</form>
 					</CommentAdd>
-					{comments.map((comment) => {
+					{comments.map((post) => {
 						return (
 							<CommentItemBlock>
 								<img className="profile" src={profile}></img>
 								<CommentText>
-									<p>{comment.comment}</p>
+									<p>{post.comment}</p>
 								</CommentText>
 								<img className="repltbtn" src={답글버튼}></img>
 							</CommentItemBlock>
