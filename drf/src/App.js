@@ -7,13 +7,13 @@ import CommentPage from './pages/CommentPage';
 
 const GlobalStyle = createGlobalStyle`
 body{
-	background: 
-	#F5F5F5;
+	background: #F5F5F5
 }
 `;
 
 const App = () => {
 	return (
+		
 		<Routes>
 			<Route path="/" element={<LoginUs />}></Route>
 			<Route path="/mypage" element={<UpLoadMain />} />

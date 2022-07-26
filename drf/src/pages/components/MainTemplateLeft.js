@@ -12,11 +12,16 @@ const MainTemplateBlock = styled.div`
 `;
 
 const Square = styled.div`
+<<<<<<< HEAD
+=======
+
+>>>>>>> bccbfc4262b05a257c6f4210d6597bb81f80688b
 	width: 240px;
 	height: 550px;
 	margin-top: 80px;
 	margin-left: 30px;
 	margin-right: 26px;
+
 `;
 
 function MainTemplateLeft({ children }) {

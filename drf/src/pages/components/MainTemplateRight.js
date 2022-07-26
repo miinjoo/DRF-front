@@ -12,11 +12,19 @@ const MainTemplateBlock = styled.div`
 `;
 
 const Square = styled.div`
+<<<<<<< HEAD
 	width: 240px;
 	height: 550px;
+=======
+	
+	width: 240px;
+	height: 550px;
+
+>>>>>>> bccbfc4262b05a257c6f4210d6597bb81f80688b
 	margin-top: 80px;
 	margin-left: 30px;
 	margin-right: 26px;
+
 `;
 
 function MainTemplateRight({ children }) {

@@ -1,11 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import Vector from './Vector.svg';
-import studio from './studio.svg';
-import spot from './spot.svg';
-import print from './print.svg';
-import comment from './comment.svg';
+import { MdLocalMovies, FcComments } from 'react-icons/fa';
 
 const CommentHeaderBlock = styled.div`
 	margin-top: 20px;
@@ -21,11 +17,6 @@ const CommentHeaderBlock = styled.div`
 		width: 33px;
 		height: 33px;
 	}
-	figcaption {
-		&:hover {
-			color: black;
-		}
-	}
 	.select {
 		color: black;
 	}
@@ -39,23 +30,23 @@ function CommentHeader() {
 	return (
 		<CommentHeaderBlock>
 			<figure onClick={goUpload} className="gobackfigure">
-				<img className="gobackbtn" src={Vector}></img>
+				<img className="gobackbtn" src="./image/Vector.svg"></img>
 				<figcaption>GO BACK</figcaption>
 			</figure>
 			<figure>
-				<img className="commentbtn" src={comment}></img>
+				<img className="commentbtn" src="./image/comment.svg"></img>
 				<figcaption className="select">COMMENT</figcaption>
 			</figure>
 			<figure>
-				<img className="studiobtn" src={studio}></img>
+				<img className="studiobtn" src="./image/studio.svg"></img>
 				<figcaption>STUDIO</figcaption>
 			</figure>
 			<figure>
-				<img className="spotbtn" src={spot}></img>
+				<img className="spotbtn" src="./image/spot.svg"></img>
 				<figcaption>SPOT</figcaption>
 			</figure>
 			<figure>
-				<img className="printbtn" src={print}></img>
+				<img className="printbtn" src="./image/print.svg"></img>
 				<figcaption>PRINT</figcaption>
 			</figure>
 		</CommentHeaderBlock>

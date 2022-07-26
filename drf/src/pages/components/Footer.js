@@ -11,7 +11,11 @@ const FooterBlock = styled.div`
 	justify-content: flex-end;
 	align-items: center;
 	position: relative;
+<<<<<<< HEAD
 	z-index: 1;
+=======
+    z-index: 1;
+>>>>>>> bccbfc4262b05a257c6f4210d6597bb81f80688b
 `;
 
 function Footer() {

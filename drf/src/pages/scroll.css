@@ -1,4 +1,5 @@
 .scroll {
+<<<<<<< HEAD
 	height: 1650px;
 	width: 675px;
 	overflow-y: scroll;
@@ -19,3 +20,25 @@
 .scroll::-webkit-scrollbar-corner {
 	background-color: black;
 }
+=======
+    height:1650px;
+    width: 675px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    margin-right: 20px;
+}
+
+.scroll::-webkit-scrollbar {
+    position: absolute;
+    width: 10px;
+    background: rgb(0, 0, 0);
+}
+.scroll::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0);
+    border-radius: 6px;
+}
+
+.scroll::-webkit-scrollbar-corner{
+    background-color: black;
+}
+>>>>>>> bccbfc4262b05a257c6f4210d6597bb81f80688b

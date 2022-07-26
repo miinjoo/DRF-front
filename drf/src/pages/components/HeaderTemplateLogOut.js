@@ -15,6 +15,7 @@ const HeaderTemplateBlock = styled.div`
 	color: #000;
 `;
 
+
 const BackgroundImage = styled.div`
 	width: 1440px;
 	height: 160px;
@@ -28,6 +29,7 @@ function HeaderTemplateLogOut({ children }) {
 		<>
 			<HeaderTemplateBlock>
 				<ul>
+<<<<<<< HEAD
 					<li
 						style={{ listStyle: 'none', float: 'left', marginLeft: '1150px' }}
 					>
@@ -41,7 +43,13 @@ function HeaderTemplateLogOut({ children }) {
 					<li style={{ listStyle: 'none', float: 'left', marginLeft: '40px' }}>
 						JOIN
 					</li>
+=======
+					<li style={{ listStyle:'none', float:'left',marginLeft : "1150px"}}>MYPAGE</li>
+					<li style={{ listStyle:'none', float:'left',marginLeft : "40px"}}><Link to="/" style={{textDecoration:'none', color :"#000"}}>LOGOUT</Link></li>
+					<li style={{ listStyle:'none', float:'left',marginLeft : "40px"}}>JOIN</li>
+>>>>>>> bccbfc4262b05a257c6f4210d6597bb81f80688b
 				</ul>
+
 			</HeaderTemplateBlock>
 			<BackgroundImage style={{ backgroundImage: `url(${image})` }}>
 				<p
