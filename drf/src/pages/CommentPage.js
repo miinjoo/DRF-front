@@ -152,6 +152,7 @@ const CommentPage = () => {
 		e.preventDefault();
 		axios
 			.post(`http://zimnii.pythonanywhere.com/posts/${id}/comments`, {
+				post: id,
 				comment: newComment,
 				user: '밍',
 			})

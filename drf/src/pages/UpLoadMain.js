@@ -77,9 +77,11 @@ const TitleInput = styled.div`
 function UpLoadMain() {
 	// 받아온 데이터 저장하는 state
 	const [posts, setPosts] = useState([]);
-	// input에 입력된 게시글과 댓글
 	const [newPost, setNewPost] = useState('');
-
+	const [image, setImage] = useState({
+		image_file: '',
+		preview_URL: './image/inputbackground.png',
+	});
 	// 새로고침 될 때 마다 실행됩니다.
 	useEffect(() => {
 		getPosts();
@@ -101,7 +103,6 @@ function UpLoadMain() {
 	// 새로운 게시글 작성 함수
 	const PostSubmit = (e) => {
 		e.preventDefault();
-
 		axios
 			.post('http://zimnii.pythonanywhere.com/posts', {
 				title: newPost,
@@ -143,10 +144,6 @@ function UpLoadMain() {
 			state: { postId: postId, postPhoto: postPhoto, postTitle: postTitle },
 		});
 	};
-	const [image, setImage] = useState({
-		image_file: '',
-		preview_URL: './image/inputbackground.png',
-	});
 
 	let inputRef;
 
@@ -210,48 +207,51 @@ function UpLoadMain() {
 							작성
 						</button>
 					</form>
-					<div className="upload">
-						<input
-							type="file"
-							accept="image/*"
-							onChange={saveImage}
-							// 클릭할 때 마다 file input의 value를 초기화 하지 않으면 버그가 발생할 수 있다
-							// 사진 등록을 두개 띄우고 첫번째에 사진을 올리고 지우고 두번째에 같은 사진을 올리면 그 값이 남아있음!
-							onClick={(e) => (e.target.value = null)}
-							ref={(refParam) => (inputRef = refParam)}
-							style={{ display: 'none' }}
-						/>
-						<button
-							className="picturebtn"
-							onClick={() => inputRef.click()}
-						></button>
-						<button className="uploadbtn" onClick={sendImageToServer}></button>
+					<div className="scroll">
+						<div className="upload">
+							<input
+								type="file"
+								accept="image/*"
+								onChange={saveImage}
+								onClick={(e) => (e.target.value = null)}
+								ref={(refParam) => (inputRef = refParam)}
+								style={{ display: 'none' }}
+							/>
+							<button
+								className="picturebtn"
+								onClick={() => inputRef.click()}
+							></button>
+							<button
+								className="uploadbtn"
+								onClick={sendImageToServer}
+							></button>
+						</div>
+						{posts.map((post) => {
+							return (
+								<div style={{ background: 'black' }}>
+									{' '}
+									<p
+										onClick={() => goComment(post.id, post.photo, post.title)}
+										style={{
+											background: 'black',
+											height: '42px',
+											cursor: 'pointer',
+										}}
+									>
+										{post.title}
+										<button
+											className="trashbtn"
+											onClick={() => onDelete(post.id)}
+										></button>
+									</p>
+									<img
+										style={{ width: '646px', height: '450px' }}
+										src={post.photo}
+									></img>
+								</div>
+							);
+						})}
 					</div>
-					{posts.map((post) => {
-						return (
-							<div style={{ background: 'black' }}>
-								{' '}
-								<p
-									onClick={() => goComment(post.id, post.photo, post.title)}
-									style={{
-										background: 'black',
-										height: '42px',
-										cursor: 'pointer',
-									}}
-								>
-									{post.title}
-									<button
-										className="trashbtn"
-										onClick={() => onDelete(post.id)}
-									></button>
-								</p>
-								<img
-									style={{ width: '646px', height: '450px' }}
-									src={post.photo}
-								></img>
-							</div>
-						);
-					})}
 				</TitleInput>
 			</ImageTemplate>
 			<FrameTemplate></FrameTemplate>
