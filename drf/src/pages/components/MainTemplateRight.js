@@ -12,12 +12,10 @@ const MainTemplateBlock = styled.div`
 `;
 
 const Square = styled.div`
-	position: absolute;
 	width: 240px;
 	height: 550px;
-	float: left;
 	margin-top: 80px;
-	margin-left: 26px;
+	margin-left: 30px;
 	margin-right: 26px;
 `;
 
@@ -27,7 +25,7 @@ function MainTemplateRight({ children }) {
 			{' '}
 			<MainTemplateBlock
 				style={{
-					backgroundImage: `url(${image})`,
+					background: `url(${image})`,
 					backgroundSize: 'cover',
 					opacity: '0.8',
 				}}

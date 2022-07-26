@@ -34,7 +34,9 @@ function HeaderTemplateLogOut({ children }) {
 						MYPAGE
 					</li>
 					<li style={{ listStyle: 'none', float: 'left', marginLeft: '40px' }}>
-						<Link to="/">LOGOUT</Link>
+						<Link to="/" style={{ textDecoration: 'none', color: '#000' }}>
+							LOGOUT
+						</Link>
 					</li>
 					<li style={{ listStyle: 'none', float: 'left', marginLeft: '40px' }}>
 						JOIN

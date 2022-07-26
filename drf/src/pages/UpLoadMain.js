@@ -9,6 +9,8 @@ import MenuBarTemplate from './components/MenuBarTemplate';
 import HeaderTemplateLogOut from './components/HeaderTemplateLogOut';
 import Footer from './components/Footer';
 import { useNavigate } from 'react-router-dom';
+import './scroll.css';
+
 const GlobalStyle = createGlobalStyle`
 body{
 	background: 
@@ -17,7 +19,7 @@ body{
 `;
 const TitleInput = styled.div`
 	width: 670px;
-	height: 60px;
+	height: 2200px;
 	background-color: #000;
 	float: left;
 	font-weight: 700;
@@ -31,6 +33,10 @@ const TitleInput = styled.div`
 		margin-bottom: 3px;
 		width: 500px;
 		height: 15px;
+		background-color: #000;
+		border: none;
+		height: 23px;
+		font-size: 20px;
 	}
 	.upload {
 		background: url('./image/inputbackground.png');
@@ -47,6 +53,15 @@ const TitleInput = styled.div`
 		margin-top: 5%;
 		margin-left: 42%;
 		cursor: pointer;
+	}
+	.trashbtn {
+		width: 28px;
+		height: 33px;
+		background: url('./image/trash.png');
+		background-size: cover;
+		float: right;
+		margin-top: 3px;
+		margin-right: 45px;
 	}
 	.picturebtn {
 		width: 150px;
@@ -111,7 +126,7 @@ function UpLoadMain() {
 		axios
 			.delete(`http://zimnii.pythonanywhere.com/posts/${id}`)
 			.then((response) => {
-				// ???? (전체 게시글 불러오기)
+				// (전체 게시글 불러오기)
 				getPosts(response.data);
 			})
 			.catch((error) => {
@@ -119,12 +134,13 @@ function UpLoadMain() {
 			});
 	};
 	const navigate = useNavigate();
-	const goComment = (id, photo) => {
+	const goComment = (id, photo, title) => {
 		var postId = id;
 		var postPhoto = photo;
-		console.log(photo);
+		var postTitle = title;
+		console.log('title', title);
 		navigate(`/comment/${postId}`, {
-			state: { postId: postId, postPhoto: postPhoto },
+			state: { postId: postId, postPhoto: postPhoto, postTitle: postTitle },
 		});
 	};
 	const [image, setImage] = useState({
@@ -180,7 +196,19 @@ function UpLoadMain() {
 							value={newPost}
 							onChange={(e) => setNewPost(e.target.value)}
 						/>
-						<button>작성</button>
+						<button
+							style={{
+								float: 'right',
+								marginRight: '30px',
+								background: 'black',
+								border: 'white solid 1px',
+								color: 'white',
+								cursor: 'pointer',
+								marginBottom: '3px',
+							}}
+						>
+							작성
+						</button>
 					</form>
 					<div className="upload">
 						<input
@@ -201,13 +229,21 @@ function UpLoadMain() {
 					</div>
 					{posts.map((post) => {
 						return (
-							<div>
+							<div style={{ background: 'black' }}>
+								{' '}
 								<p
-									onClick={() => goComment(post.id, post.photo)}
-									style={{ background: 'black', height: '42px' }}
+									onClick={() => goComment(post.id, post.photo, post.title)}
+									style={{
+										background: 'black',
+										height: '42px',
+										cursor: 'pointer',
+									}}
 								>
 									{post.title}
-									<button onClick={() => onDelete(post.id)}>삭제</button>
+									<button
+										className="trashbtn"
+										onClick={() => onDelete(post.id)}
+									></button>
 								</p>
 								<img
 									style={{ width: '646px', height: '450px' }}

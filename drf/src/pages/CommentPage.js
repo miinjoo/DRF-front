@@ -115,9 +115,11 @@ const CommentText = styled.div`
 const CommentPage = () => {
 	// 받아온 데이터 저장하는 state
 	const location = useLocation();
+	const title = location.state.postTitle;
 	const id = location.state.postId;
 	const photo = location.state.postPhoto;
-	console.log(location.state);
+
+	console.log(title);
 
 	const [posts, setPosts] = useState([]);
 	const [singlePost, setSinglePost] = useState({});
@@ -173,11 +175,10 @@ const CommentPage = () => {
 			<FrameTemplate></FrameTemplate>
 			<ImageTemplate>
 				<TitleInput>
-					<h1>{singlePost.content}</h1>
-					<div style={{ background: 'black' }}>
+					<h3 style={{ marginBottom: '0px', marginTop: '3px' }}>{title}</h3>
+					<div style={{ marginTop: '10px', background: 'black' }}>
 						<img src={photo} className="upload"></img>
 					</div>
-
 					<div className="back"></div>
 				</TitleInput>
 

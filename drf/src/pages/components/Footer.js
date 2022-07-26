@@ -10,6 +10,8 @@ const FooterBlock = styled.div`
 	flex-direction: column;
 	justify-content: flex-end;
 	align-items: center;
+	position: relative;
+	z-index: 1;
 `;
 
 function Footer() {
